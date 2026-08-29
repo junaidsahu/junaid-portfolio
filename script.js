@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Force scroll to top on refresh
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .btn[href^="#"]');
     
