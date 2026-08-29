@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 15, 19, 0.95)';
-            navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
         } else {
-            navbar.style.background = 'rgba(15, 15, 19, 0.8)';
+            navbar.style.background = 'rgba(248, 250, 252, 0.8)';
             navbar.style.boxShadow = 'none';
         }
     });
