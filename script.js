@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-links a, .btn[href^="#"]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .btn[href^="#"]');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
