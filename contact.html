@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Junaid Ahmad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Junaid <span>Ahmed</span></a></div>
+            <ul class="nav-links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="index.html#reviews">Reviews</a></li>
+                <li><a href="services.html#stack">Stack</a></li>
+                <li><a href="contact.html" class="btn-small">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="contact" class="contact" style="padding-top: 150px; min-height: 80vh;">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2>Ready to dominate your market?</h2>
+                <p>Let’s build something extraordinary. Whether you need an ad campaign, AI content, or high-quality articles, I'm ready to help.</p>
+                
+                <div class="info-blocks">
+                    <div class="info-block">
+                        <span class="info-icon">✉️</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>junaidsahuu@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-icon">🌍</span>
+                        <div>
+                            <h4>Availability</h4>
+                            <p>Global Availability (Remote)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">What do you need help with?</label>
+                        <select id="service">
+                            <option>Paid Advertising (Meta/Google)</option>
+                            <option>AI Content Generation</option>
+                            <option>SEO Article / Blog Writing</option>
+                            <option>Comprehensive Strategy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" rows="4" placeholder="Tell me about your brand and goals..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923027334996" target="_blank" class="whatsapp-btn" title="Contact me on WhatsApp">
+        <svg viewBox="0 0 32 32" width="35" height="35"><path d="M16 2a13 13 0 0 0-10.9 19.9L3.5 28.5l6.8-1.8A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-2-.9-2.3-1-.3-.1-.5-.2-.7.2s-1.2 1.5-1.5 1.8c-.2.3-.5.3-.8.2-.3-.2-1.4-.5-2.6-1.6-1-1-1.6-2.1-1.8-2.5-.2-.3 0-.4.1-.6.1-.2.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.2-.3.3-.5.1-.2.1-.3 0-.5s-.7-1.8-.9-2.5c-.2-.7-.4-.6-.6-.6h-.5c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.6c0 1.6 1.1 3.1 1.3 3.3.2.3 2.2 3.4 5.4 4.8 2.2.9 3.1 1 4.2.9 1.1-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.6-.5z" fill="#FFF"/></svg>
+    </a>
+
+    <footer>
+        <div class="container center">
+            <p>&copy; 2026 Junaid Ahmad. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
