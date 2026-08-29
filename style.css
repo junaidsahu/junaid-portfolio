@@ -621,7 +621,22 @@ footer {
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
-    .nav-links { display: none; }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero { padding: 4rem 0; min-height: auto; }
+    .services, .about, .contact, .blogs, .reviews { padding: 4rem 0; }
+    .image-placeholder { width: 100%; max-width: 350px; height: 350px; margin: 0 auto; }
+    .article-hero-img { height: 250px; }
+    .article-content { padding: 25px; }
+    .dashboard-placeholder { padding: 1.5rem; }
 }
 
 /* Modal Styles */
