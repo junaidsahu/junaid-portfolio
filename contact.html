@@ -3,88 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Junaid Ahmad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <title>Contact & Consultations | Junaid Ahmad</title>
+    <meta name="description" content="Get in touch with Junaid Ahmad for high-ROAS Meta Ads management, AI creative production, and full-funnel digital marketing strategy.">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-    <div class="background-glow"></div>
+    <!-- Ambient Aurora Glows -->
+    <div class="aurora-bg">
+        <div class="aurora-orb orb-1"></div>
+        <div class="aurora-orb orb-2"></div>
+        <div class="aurora-orb orb-3"></div>
+    </div>
 
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Junaid <span>Ahmed</span></a></div>
+            <div class="logo">
+                <a href="index.html">
+                    Junaid <span>Ahmed</span>
+                    <span class="logo-badge">PRO</span>
+                </a>
+            </div>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="index.html#reviews">Reviews</a></li>
-                <li><a href="services.html#stack">Stack</a></li>
-                <li><a href="contact.html" class="btn-small">Contact</a></li>
+                <li><a href="articles.html">Articles & Case Studies</a></li>
+                <li><a href="index.html#reviews">Client Reviews</a></li>
+                <li><a href="services.html#stack">Tech Stack</a></li>
+                <li><a href="contact.html" class="active btn-small">Get in Touch</a></li>
             </ul>
         </div>
     </nav>
 
-    <section id="contact" class="contact" style="padding-top: 150px; min-height: 80vh;">
-        <div class="container contact-container">
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container contact-grid">
             <div class="contact-info">
-                <h2>Ready to dominate your market?</h2>
-                <p>Let’s build something extraordinary. Whether you need an ad campaign, AI content, or high-quality articles, I'm ready to help.</p>
+                <span class="badge-tag">Let's Connect</span>
+                <h2>Ready to Scale Your Brand Beyond Plateaus?</h2>
+                <p>Whether you're spending $5,000/month or looking to break past $50,000/month at profitable ROAS, I help businesses turn ad budgets into measurable profit engines.</p>
                 
-                <div class="info-blocks">
-                    <div class="info-block">
-                        <span class="info-icon">✉️</span>
+                <div class="contact-blocks">
+                    <div class="contact-block">
+                        <div class="contact-icon">💬</div>
                         <div>
-                            <h4>Email</h4>
-                            <p>junaidsahuu@gmail.com</p>
+                            <h4>WhatsApp Direct</h4>
+                            <p><a href="https://wa.me/923027334996" target="_blank" style="color: #25D366; font-weight: 700;">+92 302 7334996 (Instant Reply)</a></p>
                         </div>
                     </div>
-                    <div class="info-block">
-                        <span class="info-icon">🌍</span>
+
+                    <div class="contact-block">
+                        <div class="contact-icon">✉️</div>
                         <div>
-                            <h4>Availability</h4>
-                            <p>Global Availability (Remote)</p>
+                            <h4>Email Inquiries</h4>
+                            <p><a href="mailto:junaidsahuu@gmail.com" style="color: #38bdf8; font-weight: 600;">junaidsahuu@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-block">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <h4>Global Remote Availability</h4>
+                            <p>Serving clients across US, UK, UAE, Pakistan & Europe.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="contact-form">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Your Name" required>
+
+            <div class="contact-card-box">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="input-group">
+                        <label for="name">Your Name / Brand Representative</label>
+                        <input type="text" id="name" placeholder="e.g. Alex Henderson" required>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Your Email" required>
+
+                    <div class="input-group">
+                        <label for="email">Business Email</label>
+                        <input type="email" id="email" placeholder="alex@brand.com" required>
                     </div>
-                    <div class="form-group">
-                        <label for="service">What do you need help with?</label>
-                        <select id="service">
-                            <option>Paid Advertising (Meta/Google)</option>
-                            <option>AI Content Generation</option>
-                            <option>SEO Article / Blog Writing</option>
-                            <option>Comprehensive Strategy</option>
+
+                    <div class="input-group">
+                        <label for="spend">Estimated Monthly Ad Spend</label>
+                        <select id="spend">
+                            <option value="5k-20k">$5,000 - $20,000 / month</option>
+                            <option value="20k-50k">$20,000 - $50,000 / month</option>
+                            <option value="50k+">$50,000+ / month (Enterprise Scale)</option>
+                            <option value="under-5k">Under $5,000 / month (Early Stage)</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Project Details</label>
-                        <textarea id="message" rows="4" placeholder="Tell me about your brand and goals..." required></textarea>
+
+                    <div class="input-group">
+                        <label for="service">Primary Growth Objective</label>
+                        <select id="service">
+                            <option value="meta-ads">Meta Ads Scaling (FB & Instagram CBO/ASC)</option>
+                            <option value="ai-creative">AI Video Ad Creatives & UGC Production</option>
+                            <option value="funnel-cro">Full-Funnel CRO & Landing Page Architecture</option>
+                            <option value="capi-tracking">Server-Side Tracking & Meta CAPI Setup</option>
+                            <option value="comprehensive">Comprehensive End-to-End Growth Management</option>
+                        </select>
                     </div>
-                    <button type="submit" class="btn btn-primary form-btn">Send Message</button>
+
+                    <div class="input-group">
+                        <label for="message">Project Overview & Goals</label>
+                        <textarea id="message" rows="4" placeholder="Briefly share your current ROAS, website link, and target milestones..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary form-btn">🚀 Send Inquiry & Request Audit</button>
+                    <div id="formSuccess" style="display: none; margin-top: 1rem; color: #10b981; font-weight: 700; text-align: center;">
+                        ✓ Inquiry received! Opening WhatsApp for instant direct confirmation...
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/923027334996" target="_blank" class="whatsapp-btn" title="Contact me on WhatsApp">
-        <svg viewBox="0 0 32 32" width="35" height="35"><path d="M16 2a13 13 0 0 0-10.9 19.9L3.5 28.5l6.8-1.8A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-2-.9-2.3-1-.3-.1-.5-.2-.7.2s-1.2 1.5-1.5 1.8c-.2.3-.5.3-.8.2-.3-.2-1.4-.5-2.6-1.6-1-1-1.6-2.1-1.8-2.5-.2-.3 0-.4.1-.6.1-.2.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.2-.3.3-.5.1-.2.1-.3 0-.5s-.7-1.8-.9-2.5c-.2-.7-.4-.6-.6-.6h-.5c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.6c0 1.6 1.1 3.1 1.3 3.3.2.3 2.2 3.4 5.4 4.8 2.2.9 3.1 1 4.2.9 1.1-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.6-.5z" fill="#FFF"/></svg>
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/923027334996" target="_blank" class="whatsapp-float" title="Chat on WhatsApp with Junaid">
+        <svg viewBox="0 0 32 32" width="36" height="36">
+            <path d="M16 2a13 13 0 0 0-10.9 19.9L3.5 28.5l6.8-1.8A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-2-.9-2.3-1-.3-.1-.5-.2-.7.2s-1.2 1.5-1.5 1.8c-.2.3-.5.3-.8.2-.3-.2-1.4-.5-2.6-1.6-1-1-1.6-2.1-1.8-2.5-.2-.3 0-.4.1-.6.1-.2.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.2-.3.3-.5.1-.2.1-.3 0-.5s-.7-1.8-.9-2.5c-.2-.7-.4-.6-.6-.6h-.5c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.6c0 1.6 1.1 3.1 1.3 3.3.2.3 2.2 3.4 5.4 4.8 2.2.9 3.1 1 4.2.9 1.1-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.6-.5z" fill="#FFF"/>
+        </svg>
     </a>
 
+    <!-- Footer -->
     <footer>
         <div class="container center">
-            <p>&copy; 2026 Junaid Ahmad. All Rights Reserved.</p>
+            <p>&copy; 2026 Junaid Ahmad. All Rights Reserved. • Designed for High-Performance Growth</p>
         </div>
     </footer>
-    <script src="script.js?v=2"></script>
+
+    <script src="script.js?v=4"></script>
+    <script>
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const spend = document.getElementById('spend').value;
+            const msg = document.getElementById('message').value;
+
+            document.getElementById('formSuccess').style.display = 'block';
+
+            // Optional forward to WhatsApp
+            setTimeout(() => {
+                const text = encodeURIComponent(`Hi Junaid! My name is ${name}. I am looking for ${service} (Ad Spend: ${spend}). Details: ${msg}`);
+                window.open(`https://wa.me/923027334996?text=${text}`, '_blank');
+            }, 1200);
+        }
+    </script>
 </body>
 </html>

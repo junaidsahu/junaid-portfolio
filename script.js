@@ -1,21 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Force scroll to top on refresh
+    // Force scroll restoration
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0, 0);
 
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .btn[href^="#"]');
-    
-    navLinks.forEach(link => {
+    // Dynamic Navbar Background Blur on Scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            navbar.style.background = 'rgba(6, 9, 17, 0.92)';
+            navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
+            navbar.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+        } else {
+            navbar.style.background = 'rgba(6, 9, 17, 0.8)';
+            navbar.style.boxShadow = 'none';
+            navbar.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+        }
+    });
+
+    // Smooth Scrolling for In-Page Anchor Links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
+            if (targetId === '#' || !targetId) return;
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
+                e.preventDefault();
                 targetElement.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -24,57 +35,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add scroll event listener for navbar background
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(248, 250, 252, 0.8)';
-            navbar.style.boxShadow = 'none';
+    // Animate Chart Bars on Intersection
+    const chartBars = document.querySelectorAll('.chart-bar');
+    if (chartBars.length > 0) {
+        const heights = ['65%', '82%', '50%', '94%'];
+        const chartObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    chartBars.forEach((bar, idx) => {
+                        bar.style.height = heights[idx] || '70%';
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
+
+        const chartSection = document.querySelector('.dash-chart');
+        if (chartSection) {
+            chartBars.forEach(bar => bar.style.height = '15%');
+            chartObserver.observe(chartSection);
         }
-    });
-
-    // Dashboard bars animation on scroll
-    const bars = document.querySelectorAll('.bar');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                bars[0].style.height = '60%';
-                bars[1].style.height = '80%';
-                bars[2].style.height = '40%';
-                bars[3].style.height = '90%';
-            } else {
-                bars.forEach(bar => bar.style.height = '10%');
-            }
-        });
-    }, { threshold: 0.5 });
-
-    const dashboard = document.querySelector('.dashboard-placeholder');
-    if (dashboard) {
-        // Reset bars initially
-        bars.forEach(bar => bar.style.height = '10%');
-        observer.observe(dashboard);
     }
+
+    console.log("%c✦ Junaid Ahmad | Senior Digital Marketer & AI Growth Specialist", "color: #38bdf8; font-size: 14px; font-weight: bold;");
 });
-
-// Modal Functions
-function openModal(modalId, event) {
-    if (event) event.preventDefault();
-    document.getElementById(modalId).style.display = "block";
-    document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
-}
-
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-    document.body.style.overflow = "auto"; // Restore scrolling
-}
-
-// Close modal when clicking outside of the modal content
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-        event.target.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-}
